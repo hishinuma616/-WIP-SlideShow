@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>スライドショー3</title>
+    <link rel='stylesheet' type='text/css' href='./style.css'>
+  </head>
+  <body>
+    <header>
+      <h1>スライドショーを作るぷり</h1>
+    </header>
+    <div class="box">
+      <script type="text/javascript"><!--
+        myImage = new Array(	// 画像ファイル名の設定
+        "./img/1.jpg",		
+        "./img/4.jpg",		
+        "./img/5.jpg",	
+        );	
+        myNowCnt = 0;		// 現在表示している配列番号
+        myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
+        function myChange(flgcheck){	// スライドショーメイン関数
+          // myflg = flgcheck;
+          myNowCnt = (myNowCnt<myImage.length-1) ? myNowCnt+1 : 0;		// 次の配列番号
+          myflg = (myflg==0) ? 1 : 0;						// 表示・非表示フラグ反転
+          console.log(myflg);
+          if (myflg == 0){
+            document.getElementById("idshow1").src = myImage[myNowCnt];		// 次の画像をセットする
+            document.getElementById("idshow1").className = "fadein";		// フェードイン
+            document.getElementById("idshow2").className = "fadeout";	// フェードアウト
+            
+            //現在選択されている番号のインデックスの状態をアクティブに変更するコード
+            
+          }else{
+            document.getElementById("idshow2").src = myImage[myNowCnt];		// 次の画像をセットする
+            document.getElementById("idshow1").className = "fadeout";	// フェードアウト
+            document.getElementById("idshow2").className = "fadein";		// フェードイン
+            
+            //notアクティブにステータスを変更するコード
+            
+          }
+          // setTimeout( "myChange()" , 2000 );					// 4秒周期に画像を更新する
+        }	
+        
+      // -->
+      </script>
+      <div class="main-image-box">
+        <div class="slide">
+          <div class="before-button" onClick="myChange(1)"></div>
+          <img id="idshow1" class="fadein" src="./img/1.jpg">
+          <img id="idshow2" class="fadeout" src="./img/1.jpg">
+          <div class="next-button" onClick="myChange(0)"></div>
+        </div>
+      </div>
+      <div id="js-slide-index" class="slide-index">
+        <script>
+          <!--
+          index = "";
+          for(i=0; i<myImage.length; i++){
+            index += "<a href='./index.html'>●</a>";
+          }
+          document.getElementById("js-slide-index").innerHTML = index;
+          
+          -->
+        </script>
+      </div>
+      <!-- <script>
+        var i = myImage.length;
+        // ボタンが押されたらタグを作って追加
+        var newTag = document.createElement("p");
+        // 作成したタグの中身を作成
+        newTag.innerHTML = i;
+        // 作ったタグを指定した要素の子要素として追加
+        target.append;
+      </script> -->
+      <script type="text/javascript"><!--
+        // myChange(); 
+      // -->
+      </script>
+      <div class="article-body">
+        <h2>小見出しぷり</h2>
+        <p>ポップステップゲッチュ＾〜〜<br>このらぁらって娘、可愛いぷりね</p>
+      </div>
+    </div>
+  </body>
+</html>
+

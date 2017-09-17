@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>ドラッグイベント</title>
+    <link rel='stylesheet' type='text/css' href='./style.css'>
+  </head>
+  <body>
+    <script>
+    function dragCheck(str,n){
+      document.dragForm["dStatus"+n].value = str;
+    }
+    </script>
+    <form name="dragForm">
+      ドラッグ元:<input type="text" size="20" value="Sample"
+      onDrag="dragCheck('Drag中…',3)"
+      onDragstart="dragCheck('Drag開始…',1)"
+      onDragend="dragCheck('Drag終了…',1);dragCheck('',3)"
+      onDragEnter="dragCheck('DragEnter…',1)"
+      ondragLeave="dragCheck('DragLeave…',1)"
+      onDragOver="dragCheck('DragOver…',2)">
+      <br>
+      ドラッグ先:<input type="text" size="20"
+      id="dp" onDrag="dragCheck('Drop',3)"><br>
+      状態1:<input type="text" size="20" name="dStatus1"><br>
+      状態2:<input type="text" size="20" name="dStatus2"><br>
+      状態3:<input type="text" size="20" name="dStatus3"><br>
+    </form>
+  </body>
+</html>
+

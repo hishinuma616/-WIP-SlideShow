@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body, header, footer p, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #e0e0e0;
+  border-bottom: solid 3px #c3c3c3;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #414141;
+  text-align: center;
+}
+
+.box {
+  width: 730px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+.main-image-box {
+  width: 960px;
+}
+
+.slide {
+  border-style :ridge;
+  border-width :4px;
+  border: solid 5px #fff;
+  box-shadow: 0 0 5px #ddd;
+  width :730px;
+  height :414px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.before-button {
+  background-image: url(./img/left.png);
+  content: "";
+  background-size:cover;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 170px;
+  left: 0;
+  z-index: 99;
+}
+
+.before-button:hover {
+  cursor: pointer;
+}
+
+.next-button {
+  background-image: url(./img/right.png);
+  content: "";
+  background-size:cover;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 170px;
+  right: 0;
+  z-index: 99;
+}
+
+.next-button:hover {
+  cursor: pointer;
+}
+
+.slide img {
+  position :absolute;
+  width :720px;
+  height :404px;
+}
+
+.slide-index {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.slide-index a {
+  text-decoration: none;
+}
+
+.article-body {
+  color: #414141;
+  width: 730px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ddd;
+}
+
+
+/*-------アニメーション処理-------*/
+
+.fadeout{
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+}
+.fadein{
+  opacity: 1;
+  transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+}
