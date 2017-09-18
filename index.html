@@ -13,16 +13,27 @@
         "./img/1.jpg",		
         "./img/2.jpg",		
         "./img/3.jpg",	
+        "./img/1.jpg",		
+        "./img/2.jpg",		
+        "./img/3.jpg",	
         );	
         myNowCnt = 0;		// 現在表示している配列番号
         myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
-        function myChange(flgcheck){	// スライドショーメイン関数
-          // myflg = flgcheck;
-          if(myNowCnt<myImage.length-1){ // 次の配列番号
-            myNowCnt = myNowCnt+1;
-          }else{
-            myNowCnt = 0;
-          }	
+        function myChange(check){	// スライドショーメイン関数
+          if(check==1){ //加算式
+            if(myNowCnt<myImage.length-1){ // 次の配列番号
+              myNowCnt = myNowCnt+1;
+            }else{
+              myNowCnt = 0;
+            }	
+          }else{ //減少式
+            if(myNowCnt==0){ // 次の配列番号
+              myNowCnt = myImage.length-1;
+            }else{
+              myNowCnt = myNowCnt-1;
+            }	
+          }
+          
           myflg = (myflg==0) ? 1 : 0;						// 表示・非表示フラグ反転
           if (myflg == 0){
             document.getElementById("idshow1").src = myImage[myNowCnt];		// 次の画像をセットする
@@ -48,11 +59,7 @@
             }else{
               document.getElementById(myNowCnt-1).className = "slide-index-icon"; //インデックスの色を変える
               console.log("index.No2-2:"+myNowCnt);
-            }
-            
-            
-            //notアクティブにステータスを変更するコード
-            
+            }  
           }
         }	
         
@@ -63,26 +70,24 @@
             myNowCnt = point-1;
           }
           myChange(point);
-          // var changeIndex = document.getElementById(point).className = "slide-index-icon slide-index-active";
-          // li要素を全て取得する。[i]番目のクラスをactiveにする。スライドを切り替える
         }
         
         function out(){
-          timerID=setInterval("myChange()",2000);					// 4秒周期に画像を更新する
+          timerID=setInterval("myChange()",2000);	// 2秒周期に画像を更新する
         }
         
         function outStop(){
-          clearInterval(timerID);					// 4秒周期に画像を更新する
+          clearInterval(timerID);
         }
         
       // -->
       </script>
       <div class="main-image-box">
         <div class="slide">
-          <div class="before-button" onClick="myChange(1)"></div>
+          <div class="before-button" onClick="myChange(0)"></div>
           <img id="idshow1" class="fadein" src="./img/1.jpg">
           <img id="idshow2" class="fadeout" src="./img/1.jpg">
-          <div class="next-button" onClick="myChange(0)"></div>
+          <div class="next-button" onClick="myChange(1)"></div>
         </div>
       </div>
       <ul id="js-slide-index" class="slide-index">
@@ -106,10 +111,27 @@
       // -->
       </script>
       <div class="article-body">
-        <h2>小見出しぷり</h2>
-        <p>ポップステップゲッチュ＾〜〜<br>このらぁらって娘、可愛いぷりね</p>
+        <h2>実装した機能</h2>
+        <ol>
+          <li>自動スライドon/off</li>
+          <li>ボタンでのスライド切り替え</li>
+          <li>インデックスから切り替え</li>
+        </ol>
+        <h2>未実装</h2>
+        <ol>
+          <li>インデックスの現在地がおかしいバグ修正</li>
+          <li>逆回りにスライドできるようにする</li>
+        </ol>
+        <h2>追加予定</h2>
+        <ol>
+          <li>前のスライド、次のスライドが半分映り込む</li>
+          <li>クリックでスライドイン</li>
+        </ol>
       </div>
     </div>
+    <footer>
+      <small>ポップステップゲッチュ〜〜</small>
+    </footer>
   </body>
 </html>
 

@@ -16,6 +16,10 @@ body {
   background-color: #f5f5f5;
 }
 
+h2 {
+  border-bottom: solid 1px #c3c3c3;
+}
+
 header {
   background-color: #e0e0e0;
   border-bottom: solid 3px #c3c3c3;
@@ -96,6 +100,7 @@ h1 {
 .slide-index-icon {
   display: inline-block;
   margin-right: 8px;
+  color: #000;
 }
 
 .slide-index-icon:hover {
@@ -122,6 +127,14 @@ h1 {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 5px #ddd;
+}
+
+footer {
+  text-align: center;
+  background-color: #414141;
+  margin-top: 30px;
+  padding: 20px 0;
+  color: #fff;
 }
 
 
