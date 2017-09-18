@@ -91,16 +91,7 @@ h1 {
   height :404px;
 }
 
-.slide-no {
-  display: inline;
-  padding: 30px;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  color: #fff;
-  background-color: #000;
-  z-index: 99;
-}
+/*-------インデックス処理 ここから-------*/
 
 .slide-index {
   text-align: center;
@@ -114,6 +105,11 @@ h1 {
   color: #000;
 }
 
+.slide-index-icon:last-child {
+  margin-right: 0;
+  
+}
+
 .slide-index-icon:hover {
   cursor: pointer;
 }
@@ -123,8 +119,24 @@ h1 {
 }
 
 .slide-index-icon:last-child {
-  margin-right: 0;
+  /*margin-right: 0;*/
 }
+
+.slide-thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.slide-thumbnail-active {
+  border: solid 2px blue;
+}
+
+.slide-thumbnail:hover {
+  opacity: 0.5;
+}
+
+/*-------インデックス処理 ここまで-------*/
 
 .out-button-box {
   width: 730px;

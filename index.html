@@ -55,9 +55,11 @@
         function indexCheck(){
           for(j=0; j<=myImage.length-1 ;j++){
             if(j!=myNowCnt){
-              document.getElementById(j).className = "slide-index-icon"; //インデックスの色を変える
+              //  document.getElementById(j).className = "slide-index-icon"; //インデックスの色を変える
+              document.getElementById("thumbnail"+j).className = "slide-thumbnail";
             }else{
-              document.getElementById(j).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+              //document.getElementById(j).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+              document.getElementById("thumbnail"+j).className = "slide-thumbnail slide-thumbnail-active";
             }
           }
         }	
@@ -91,13 +93,19 @@
       </div>
       <ul id="js-slide-index" class="slide-index">
         <script>
-        <!--
+         <!--
          index = "";
+         thumbnail = "";
          for(i=0; i<myImage.length; i++){
-            index += "<li href='./index.html' id='"+i+"' class='slide-index-icon' onClick='indexChange("+i+")'>●</li>";
+          // ●のみ
+          //  index += "<li href='./index.html' id='"+i+"' class='slide-index-icon' onClick='indexChange("+i+")'>●</li>";
+          
+          // サムネイル表示
+          index += "<li href='./index.html' id='"+i+"' class='slide-index-icon' onClick='indexChange("+i+")'><img src='"+myImage[i]+"' id='thumbnail"+i+"' class='slide-thumbnail'></li>";
          }
          document.getElementById("js-slide-index").innerHTML = index;
-         document.getElementById(0).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+         //  document.getElementById(0).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+         document.getElementById("thumbnail0").className = "slide-thumbnail slide-thumbnail-active"; //インデックスの色を変える
          -->
         </script>
       </ul>
@@ -117,17 +125,19 @@
           <li>インデックスから切り替え</li>
           <li>インデックスの現在地がおかしいバグ修正</li>
           <li>逆回りにスライドできるようにする</li>
+          <li>スライドのサムネイル表示</li>
         </ol>
         <h2>未実装</h2>
         <ol>
-          <li>スライドのサムネイル表示</li>
+          <li>マウスオンで矢印の表示・非表示切り替え<li>
         </ol>
         <h2>追加予定</h2>
         <ol>
           <li>前のスライド、次のスライドが半分映り込む</li>
           <li>クリックでスライドイン</li>
         </ol>
-        <a href="http://cya.sakura.ne.jp/java/sshow2.htm" target="_blank" class="outside-link">(参考:犬でもわかるJavaScript講座)</a>
+        <a href="http://cya.sakura.ne.jp/java/sshow2" target="_blank" class="outside-link">(参考:犬でもわかるJavaScript講座)</a>
+        <a href="http://bxslider.com/" target="_blank" class="outside-link">(参考:The Responsive jQuery Content Slider)</a>
       </div>
     </div>
     <footer>
