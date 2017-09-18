@@ -12,10 +12,12 @@
         myImage = new Array(	// 画像ファイル名の設定
         "./img/1.jpg",		
         "./img/2.jpg",		
-        "./img/3.jpg",	
-        "./img/1.jpg",		
-        "./img/2.jpg",		
-        "./img/3.jpg",	
+        "./img/3.jpg",
+        "./img/秋刀魚.jpg",
+        "./img/白川郷.jpg",
+        "./img/読書.jpg",
+        "./img/滝.jpg",
+        "./img/紅葉.jpg",
         );	
         myNowCnt = 0;		// 現在表示している配列番号
         myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
@@ -26,7 +28,7 @@
             }else{
               myNowCnt = 0;
             }	
-          }else{ //減少式
+          }else if(check==0){ //減少式
             if(myNowCnt==0){ // 次の配列番号
               myNowCnt = myImage.length-1;
             }else{
@@ -39,27 +41,23 @@
             document.getElementById("idshow1").src = myImage[myNowCnt];		// 次の画像をセットする
             document.getElementById("idshow1").className = "fadein";		// フェードイン
             document.getElementById("idshow2").className = "fadeout";	// フェードアウト
-            document.getElementById(myNowCnt).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
-            if(myNowCnt == 0){
-              document.getElementById(myImage.length-1).className = "slide-index-icon"; //インデックスの色を変える
-              console.log("index.No1-1:"+myImage.length-1);
-            }else{
-              document.getElementById(myNowCnt-1).className = "slide-index-icon"; //インデックスの色を変える
-              console.log("index.No1-2:"+myNowCnt);
-            }
+            indexCheck();
             
           }else{
             document.getElementById("idshow2").src = myImage[myNowCnt];		// 次の画像をセットする
             document.getElementById("idshow1").className = "fadeout";	// フェードアウト
             document.getElementById("idshow2").className = "fadein";		// フェードイン
-            document.getElementById(myNowCnt).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
-            if(myNowCnt == 0){
-              document.getElementById(myImage.length-1).className = "slide-index-icon"; //インデックスの色を変える
-              console.log("index.No2-1:"+myImage.length-1);
+            indexCheck();
+          }
+        }
+        
+        function indexCheck(){
+          for(j=0; j<=myImage.length-1 ;j++){
+            if(j!=myNowCnt){
+              document.getElementById(j).className = "slide-index-icon"; //インデックスの色を変える
             }else{
-              document.getElementById(myNowCnt-1).className = "slide-index-icon"; //インデックスの色を変える
-              console.log("index.No2-2:"+myNowCnt);
-            }  
+              document.getElementById(j).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+            }
           }
         }	
         
@@ -69,11 +67,11 @@
           }else{
             myNowCnt = point-1;
           }
-          myChange(point);
+          myChange(1);
         }
         
         function out(){
-          timerID=setInterval("myChange()",2000);	// 2秒周期に画像を更新する
+          timerID=setInterval("myChange(1)",2000);	// 2秒周期に画像を更新する
         }
         
         function outStop(){

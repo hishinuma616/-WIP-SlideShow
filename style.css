@@ -91,6 +91,17 @@ h1 {
   height :404px;
 }
 
+.slide-no {
+  display: inline;
+  padding: 30px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background-color: #000;
+  z-index: 99;
+}
+
 .slide-index {
   text-align: center;
   width: 730px;
