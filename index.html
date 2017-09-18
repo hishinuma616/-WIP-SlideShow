@@ -11,33 +11,69 @@
       <script type="text/javascript"><!--
         myImage = new Array(	// 画像ファイル名の設定
         "./img/1.jpg",		
-        "./img/4.jpg",		
-        "./img/5.jpg",	
+        "./img/2.jpg",		
+        "./img/3.jpg",	
         );	
         myNowCnt = 0;		// 現在表示している配列番号
         myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
         function myChange(flgcheck){	// スライドショーメイン関数
           // myflg = flgcheck;
-          myNowCnt = (myNowCnt<myImage.length-1) ? myNowCnt+1 : 0;		// 次の配列番号
+          if(myNowCnt<myImage.length-1){ // 次の配列番号
+            myNowCnt = myNowCnt+1;
+          }else{
+            myNowCnt = 0;
+          }	
           myflg = (myflg==0) ? 1 : 0;						// 表示・非表示フラグ反転
-          console.log(myflg);
           if (myflg == 0){
             document.getElementById("idshow1").src = myImage[myNowCnt];		// 次の画像をセットする
             document.getElementById("idshow1").className = "fadein";		// フェードイン
             document.getElementById("idshow2").className = "fadeout";	// フェードアウト
-            
-            //現在選択されている番号のインデックスの状態をアクティブに変更するコード
+            document.getElementById(myNowCnt).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+            if(myNowCnt == 0){
+              document.getElementById(myImage.length-1).className = "slide-index-icon"; //インデックスの色を変える
+              console.log("index.No1-1:"+myImage.length-1);
+            }else{
+              document.getElementById(myNowCnt-1).className = "slide-index-icon"; //インデックスの色を変える
+              console.log("index.No1-2:"+myNowCnt);
+            }
             
           }else{
             document.getElementById("idshow2").src = myImage[myNowCnt];		// 次の画像をセットする
             document.getElementById("idshow1").className = "fadeout";	// フェードアウト
             document.getElementById("idshow2").className = "fadein";		// フェードイン
+            document.getElementById(myNowCnt).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+            if(myNowCnt == 0){
+              document.getElementById(myImage.length-1).className = "slide-index-icon"; //インデックスの色を変える
+              console.log("index.No2-1:"+myImage.length-1);
+            }else{
+              document.getElementById(myNowCnt-1).className = "slide-index-icon"; //インデックスの色を変える
+              console.log("index.No2-2:"+myNowCnt);
+            }
+            
             
             //notアクティブにステータスを変更するコード
             
           }
-          // setTimeout( "myChange()" , 2000 );					// 4秒周期に画像を更新する
         }	
+        
+        function indexChange(point){
+          if(point == 0){
+            myNowCnt = myImage.length-1-point;
+          }else{
+            myNowCnt = point-1;
+          }
+          myChange(point);
+          // var changeIndex = document.getElementById(point).className = "slide-index-icon slide-index-active";
+          // li要素を全て取得する。[i]番目のクラスをactiveにする。スライドを切り替える
+        }
+        
+        function out(){
+          timerID=setInterval("myChange()",2000);					// 4秒周期に画像を更新する
+        }
+        
+        function outStop(){
+          clearInterval(timerID);					// 4秒周期に画像を更新する
+        }
         
       // -->
       </script>
@@ -49,27 +85,22 @@
           <div class="next-button" onClick="myChange(0)"></div>
         </div>
       </div>
-      <div id="js-slide-index" class="slide-index">
+      <ul id="js-slide-index" class="slide-index">
         <script>
-          <!--
-          index = "";
-          for(i=0; i<myImage.length; i++){
-            index += "<a href='./index.html'>●</a>";
-          }
-          document.getElementById("js-slide-index").innerHTML = index;
-          
-          -->
+        <!--
+         index = "";
+         for(i=0; i<myImage.length; i++){
+            index += "<li href='./index.html' id='"+i+"' class='slide-index-icon' onClick='indexChange("+i+")'>●</li>";
+         }
+         document.getElementById("js-slide-index").innerHTML = index;
+         document.getElementById(0).className = "slide-index-icon slide-index-active"; //インデックスの色を変える
+         -->
         </script>
+      </ul>
+      <div class="out-button-box">
+        <input type="button" value="自動" onClick="out()">
+        <input type="button" value="停止" onClick="outStop()">
       </div>
-      <!-- <script>
-        var i = myImage.length;
-        // ボタンが押されたらタグを作って追加
-        var newTag = document.createElement("p");
-        // 作成したタグの中身を作成
-        newTag.innerHTML = i;
-        // 作ったタグを指定した要素の子要素として追加
-        target.append;
-      </script> -->
       <script type="text/javascript"><!--
         // myChange(); 
       // -->
