@@ -140,6 +140,12 @@ h1 {
   box-shadow: 0 0 5px #ddd;
 }
 
+.outside-link {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+}
+
 footer {
   text-align: center;
   background-color: #414141;

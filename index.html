@@ -21,6 +21,7 @@
         );	
         myNowCnt = 0;		// 現在表示している配列番号
         myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
+        
         function myChange(check){	// スライドショーメイン関数
           if(check==1){ //加算式
             if(myNowCnt<myImage.length-1){ // 次の配列番号
@@ -114,17 +115,19 @@
           <li>自動スライドon/off</li>
           <li>ボタンでのスライド切り替え</li>
           <li>インデックスから切り替え</li>
+          <li>インデックスの現在地がおかしいバグ修正</li>
+          <li>逆回りにスライドできるようにする</li>
         </ol>
         <h2>未実装</h2>
         <ol>
-          <li>インデックスの現在地がおかしいバグ修正</li>
-          <li>逆回りにスライドできるようにする</li>
+          <li>スライドのサムネイル表示</li>
         </ol>
         <h2>追加予定</h2>
         <ol>
           <li>前のスライド、次のスライドが半分映り込む</li>
           <li>クリックでスライドイン</li>
         </ol>
+        <a href="http://cya.sakura.ne.jp/java/sshow2.htm" target="_blank" class="outside-link">(参考:犬でもわかるJavaScript講座)</a>
       </div>
     </div>
     <footer>
