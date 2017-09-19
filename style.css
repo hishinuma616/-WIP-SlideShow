@@ -108,9 +108,12 @@ h1 {
   color: #000;
 }
 
+.slide-index-icon:nth-child(2) {
+  border: solid 2px blue;
+}
+
 .slide-index-icon:last-child {
   margin-right: 0;
-
 }
 
 .slide-index-icon:hover {
@@ -132,7 +135,7 @@ h1 {
 }
 
 .slide-thumbnail-active {
-  border: solid 2px blue;
+  /*border: solid 2px blue;*/
 }
 
 .slide-thumbnail:hover {
