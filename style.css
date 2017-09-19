@@ -94,9 +94,12 @@ h1 {
 /*-------インデックス処理 ここから-------*/
 
 .slide-index {
+  position: relative;
   text-align: center;
   width: 730px;
+  left: 0;
   margin-bottom: 10px;
+  transition: 0.5s;
 }
 
 .slide-index-icon {
@@ -107,7 +110,7 @@ h1 {
 
 .slide-index-icon:last-child {
   margin-right: 0;
-  
+
 }
 
 .slide-index-icon:hover {
@@ -170,12 +173,12 @@ footer {
 /*-------アニメーション処理-------*/
 
 .fadeout{
-  opacity: 0;
+
   transition: 0.4s ease-in-out;
   -webkit-transition: 0.4s ease-in-out;
 }
 .fadein{
-  opacity: 1;
+
   transition: 0.4s ease-in-out;
   -webkit-transition: 0.4s ease-in-out;
 }
