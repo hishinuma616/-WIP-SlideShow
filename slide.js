@@ -10,6 +10,7 @@ myImage = new Array(	// 画像ファイル名の設定
 );
 myNowCnt = 0;		// 現在表示している配列番号
 myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
+var oya = document.getElementById('js-slide-index');
 
 function myChange(check){	// スライドショーメイン関数
   if(check==1){ //加算式
@@ -68,6 +69,30 @@ function out(){
 
 function outStop(){
   clearInterval(timerID);
+}
+
+function listAdd(){
+  var elemLi = document.createElement('li');  // li要素生成
+  elemLi.setAttribute("id","hoge");
+  elemLi.setAttribute("class","slide-index-icon");
+  elemLi.innerHTML = "<img src='"+myImage[myNowCnt]+"' class='slide-thumbnail'>";
+  oya.appendChild(elemLi);
+  oya.removeChild(oya.firstChild);
+
+  if(myNowCnt<myImage.length-1){ // 次の配列番号
+    myNowCnt = myNowCnt+1;
+  }else{
+    myNowCnt = 0;
+  }
+  oya.style.transition="0s";
+  oya.style.left = "0";
+}
+
+function slideAnimation(){
+  oya.style.transition="0.5s";
+  oya.style.left = "-78px";
+
+  window.setTimeout("listAdd()", "550");
 }
 
 // ----------サムネイルの処理 ここから▼----------
