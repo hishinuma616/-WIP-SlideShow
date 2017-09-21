@@ -5,25 +5,18 @@
   </head>
   <body>
     <header>
-      <h1>スライドショーを作るぷり</h1>
+      <h1>スライドショーを作る</h1>
     </header>
     <div class="box">
-
-      <div class="main-image-box">
-        <div class="slide">
-          <div class="before-button" onClick="myChange(0)"></div>
-          <!-- <img id="idshow1" class="fadein" src="./img/秋刀魚.jpg">
-          <img id="idshow2" class="fadeout" src="./img/白川郷.jpg"> -->
-          <div class="next-button" onClick="myChange(1)"></div>
-        </div>
+      <div class="slide-box">
+        <ul id="js-slide-index" class="slide-index">
+          <!-- スライドの画像が入ります -->
+        </ul>
       </div>
-      <ul id="js-slide-index" class="slide-index">
-        <!-- スライドの画像が入ります -->
-      </ul>
       <div class="out-button-box">
         <input type="button" value="自動" onClick="out()">
         <input type="button" value="停止" onClick="outStop()">
-        <input type="button" value="先頭削除、後ろに追加" onClick="slideAnimation()">
+        <input type="button" value="スライド" onClick="slideAnimation()">
       </div>
 
       <div class="article-body">
@@ -38,15 +31,12 @@
         </ol>
         <h2>未実装</h2>
         <ol>
-          <li>マウスオンで矢印の表示・非表示切り替え<li>
-        </ol>
-        <h2>追加予定</h2>
-        <ol>
           <li>前のスライド、次のスライドが半分映り込む</li>
-          <li>クリックでスライドイン</li>
+          <li>ドラッグでスライド切り替え</li>
         </ol>
         <a href="http://cya.sakura.ne.jp/java/sshow2" target="_blank" class="outside-link">(参考:犬でもわかるJavaScript講座)</a>
         <a href="http://bxslider.com/" target="_blank" class="outside-link">(参考:The Responsive jQuery Content Slider)</a>
+        <a href="http://sugoiweb.nezihiko.com/" target="_blank" class="outside-link">(参考:すごいWEB)</a>
       </div>
     </div>
     <footer>
