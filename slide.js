@@ -22,11 +22,11 @@ function outStop(){
 }
 
 function listChange(){
-  var elemLi = document.createElement('li');  // li要素生成
-  elemLi.setAttribute("id","hoge");
-  elemLi.setAttribute("class","slide-index-icon");
-  elemLi.innerHTML = "<img src='"+myImage[myNowCnt]+"' class='slide-thumbnail'>";
-  oya.appendChild(elemLi);
+  var slideElement = document.createElement('li');  // li要素生成
+  slideElement.setAttribute("id","hoge");
+  slideElement.setAttribute("class","slide-index-icon");
+  slideElement.innerHTML = "<img src='"+myImage[myNowCnt]+"' class='slide-thumbnail'>";
+  oya.appendChild(slideElement);
   oya.removeChild(oya.firstChild);
 
   if(myNowCnt<myImage.length-1){ // 次の配列番号
