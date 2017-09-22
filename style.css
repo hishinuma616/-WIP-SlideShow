@@ -93,10 +93,15 @@ h1 {
 
 /*-------インデックス処理 ここから-------*/
 
+.slide-box {
+  width: 730px;
+  overflow: hidden;
+}
+
 .slide-index {
   position: relative;
-  text-align: center;
-  width: 730px;
+  text-align: left;
+  width: 2000px;
   left: 0;
   margin-bottom: 10px;
   transition: 0.5s;
@@ -106,10 +111,17 @@ h1 {
   display: inline-block;
   margin-right: 8px;
   color: #000;
+  border: solid 5px #fff;
+  box-shadow: 0 0 5px #ddd;
+}
+
+.slide-thumbnail {
+  width: 350px;
+  height: 192px;
 }
 
 .slide-index-icon:nth-child(2) {
-  border: solid 2px blue;
+  /*border: solid 2px blue;*/
 }
 
 .slide-index-icon:last-child {
@@ -117,7 +129,7 @@ h1 {
 }
 
 .slide-index-icon:hover {
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 .slide-index-active {
@@ -128,18 +140,10 @@ h1 {
   /*margin-right: 0;*/
 }
 
-.slide-thumbnail {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-}
+
 
 .slide-thumbnail-active {
   /*border: solid 2px blue;*/
-}
-
-.slide-thumbnail:hover {
-  opacity: 0.5;
 }
 
 /*-------インデックス処理 ここまで-------*/
@@ -170,18 +174,4 @@ footer {
   margin-top: 30px;
   padding: 20px 0;
   color: #fff;
-}
-
-
-/*-------アニメーション処理-------*/
-
-.fadeout{
-
-  transition: 0.4s ease-in-out;
-  -webkit-transition: 0.4s ease-in-out;
-}
-.fadein{
-
-  transition: 0.4s ease-in-out;
-  -webkit-transition: 0.4s ease-in-out;
 }
